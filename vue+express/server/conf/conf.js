@@ -1,8 +1,8 @@
 module.exports = {
     mysql: {
-        host: 'localhost',
+        host: '',
         user: 'root',
-        password: '981407034',
+        password: '',
         database:'user',
         // 最大连接数，默认为10
         connectionLimit: 10
