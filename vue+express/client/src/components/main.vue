@@ -49,13 +49,13 @@
       >
       <el-form ref="passsword"   :model="passsword"  label-width="80px">
         <el-form-item label="原来密码">
-            <el-input type="" v-model="passsword.origain"></el-input>
+            <el-input type="password"  v-model="passsword.origain"></el-input>
         </el-form-item>
         <el-form-item label="新的密码">
-          <el-input type="" v-model="passsword.newword" ></el-input>
+          <el-input type="password" v-model="passsword.newword" ></el-input>
         </el-form-item>
         <el-form-item label="重复密码">
-          <el-input type="" v-model="passsword.remewword" ></el-input>
+          <el-input type="password" v-model="passsword.remewword" ></el-input>
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
