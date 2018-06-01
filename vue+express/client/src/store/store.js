@@ -4,7 +4,10 @@ import Vuex from  'vuex'
 Vue.use(Vuex)
 
 const state={
-      name:"kuangdong"
+      name:""
+}
+if(sessionStorage.getItem('name')){
+  state.name=sessionStorage.getItem('name');
 }
 const mutations={
   changeName(state,name){

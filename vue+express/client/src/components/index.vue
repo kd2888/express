@@ -52,11 +52,10 @@
             if(data.code==1){
               that.$message.success({message:'登陆成功',onClose:function () {
                   that.$store.commit('changeName', that.form.name)
+                  sessionStorage.setItem("name", that.form.name);
                   that.$router.push("main")
+
                 }})
-
-
-
             }else{
               that.$message.error(data.msg);
             }

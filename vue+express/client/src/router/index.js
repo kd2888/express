@@ -12,7 +12,7 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
-      component: Main
+      component: Index
     },
     {
       path: '/register',
@@ -24,9 +24,9 @@ export default new Router({
       path: '/main',
       name: 'main',
       component: Main,
-      // meta: {
-      //   requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
-      // },
+      meta: {
+        requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
+      },
     }
   ]
 })

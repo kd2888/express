@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var url = require('url');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var mysql = require('mysql'),
@@ -12,20 +12,22 @@ var mysql = require('mysql'),
 var mysqlConf = require('./conf/conf')
 
 //生成一个 SessionStore 实例的参数
-// var options =mysqlConf.mysql;
-
+var options =mysqlConf.mysql;
+    options['resave']=false;
+    options['saveUninitialized']=true;
 var app = express();
 
 
-//使用SessionStore 中间件
-// app.use(session({
-//     key: 'name',
-//     secret: '123456',
-//     store: new SessionStore(options),
-//     cookie: {
-//         maxAge: 6 * 60 * 60 * 1000
-//     },
-// }))
+app.use(cookieParser());
+// 使用SessionStore 中间件
+app.use(session({
+    key: 'name',
+    secret: '123456',
+    store: new SessionStore(options),
+    cookie: {
+        maxAge: 6 * 60 * 60 * 1000
+    },
+}))
 
 
 
@@ -38,7 +40,7 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
@@ -46,7 +48,15 @@ app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+    var pathUrl= url.parse(req.url, true).pathname
+    console.log(pathUrl)
+    console.log(req.session.name)
+   if(req.session.name||(pathUrl.indexOf('register')!=-1)){
+       next(createError(404));
+   } else{
+       res.redirect('/');
+    }
+
 });
 
 // error handler

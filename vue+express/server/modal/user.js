@@ -24,6 +24,7 @@ exports.login=function (req,res) {
             }else if(pawme==paw){
                 data.code=1
                 data.msg="正确"
+                req.session.name=naame;
             }else{
                 data.code=0
                 data.msg="未知异常"
@@ -35,13 +36,16 @@ exports.login=function (req,res) {
     })
 }
 exports.register=function (req,res) {
-    var naame=req.body.name
+    var name=req.body.name
     var paw=req.body.password
 
-    console.log(naame,paw)
-    userApi.installuse({username:naame,password:paw},function (data) {
+    console.log(name,paw)
+    userApi.installuse({username:name,password:paw},function (data) {
         console.log("dasdasddsas")
         console.log(data)
+        if(data.code==1){
+            req.session.name=name;
+        }
         res.end(JSON.stringify(data));
     })
 }
@@ -61,7 +65,7 @@ exports.subSpending=function (req,res) {
     console.log(dataVal)
     datakey=datakey.substr(0,datakey.length-1)
     dataSet=dataSet.substr(0,dataSet.length-1)
-    userApi.selectXiaofei(date,function (data) {
+    userApi.selectXiaofei([date,req.session.name],function (data) {
         console.log("dasdasddsas")
         console.log(data)
         if(data.code==0){
@@ -82,7 +86,7 @@ exports.subSpending=function (req,res) {
 }
 exports.getSpending=function (req,res) {
     console.log(req.body)
-    userApi.selectXiaofei(req.body.date,function (data) {
+    userApi.selectXiaofei([req.body.date,req.session.name],function (data) {
         console.log("dasdasddsas")
         console.log(data)
         res.end(JSON.stringify(data));
@@ -90,7 +94,7 @@ exports.getSpending=function (req,res) {
 }
 exports.getSumByDate=function (req,res) {
     console.log(req.body)
-    userApi.getSumByDate(req.body.month,req.body.nextmonth,function (data) {
+    userApi.getSumByDate([req.body.month,req.body.nextmonth,req.session.name],function (data) {
         console.log("dasdasddsas2")
         console.log(data)
         res.end(JSON.stringify(data));

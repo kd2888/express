@@ -27,43 +27,6 @@ module.exports = {
             callback(formats.success(result));
         });
     },
-    addSpending: function (data, callback) {
-
-
-        pool.query(userSqlMap.getdate,date,function (error, result) {
-            if (error) {
-                callback(formats.error(error))
-                console.log(error)
-                return
-            };
-            //日期已存在
-            if(result.length>0){
-                datakey='update xiaofei set '+dataSet+' where date=?';
-                dataVal.push(date)
-                pool.query(datakey, dataVal, function (error, result) {
-                    if (error) {
-                        callback(formats.error(error))
-                        console.log(error)
-                        return
-                    }
-                    ;
-                    callback(formats.success(result));
-                });
-            }else{
-                datakey='insert into xiaofei('+datakey+') values(?,?,?,?,?,?,?,?,?,?,?,?,?)'
-                pool.query(datakey, dataVal, function (error, result) {
-                    if (error) {
-                        callback(formats.error(error))
-                        console.log(error)
-                        return
-                    }
-                    ;
-                    callback(formats.success(result));
-                });
-            }
-
-        });
-    },
     selectXiaofei:function (date,callback) {
         pool.query(userSqlMap.getdate, date, function (error, result) {
             if (error) {
@@ -98,8 +61,8 @@ module.exports = {
             callback(formats.success(result));
         });
     },
-    getSumByDate:function (month,next,callback) {
-        pool.query(userSqlMap.getSumByDate, [month,next], function (error, result) {
+    getSumByDate:function (data,callback) {
+        pool.query(userSqlMap.getSumByDate,data, function (error, result) {
             if (error) {
                 callback(formats.error(error))
                 console.log(error)
