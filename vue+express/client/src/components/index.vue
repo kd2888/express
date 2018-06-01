@@ -1,6 +1,7 @@
 <template>
   <div class="conent">
     <h3>登陆</h3>
+    <h5>这是一个简单的记账本，可以让你知道你的钱花在哪了</h5>
   <el-form ref="form" :model="form" label-width="0px">
     <el-form-item label="">
       <el-input v-model="form.name"  placeholder="用户名"></el-input>
