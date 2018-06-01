@@ -1,6 +1,6 @@
 import axios from 'axios'
 let url='api'
-//  let url=''
+ // let url=''
 
 //登陆
 const login=(name,pas)=>{

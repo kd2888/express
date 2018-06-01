@@ -9,7 +9,7 @@
       <el-input v-model="form.passsword" placeholder="密码"></el-input>
     </el-form-item>
     <el-form-item label="">
-      <el-input v-model="form.repPasssword" placeholder="重复密码"></el-input>
+      <el-input v-model="form.repPasssword" placeholder="重复密码" @keyup.enter.native="onSubmit"></el-input>
     </el-form-item>
 
 
