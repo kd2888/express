@@ -1,5 +1,6 @@
 var userApi=require('../dao/userDAO')
 
+//登陆
 exports.login=function (req,res) {
     var naame=req.body.name
     var paw=req.body.password
@@ -35,20 +36,40 @@ exports.login=function (req,res) {
         res.end(JSON.stringify(data));
     })
 }
+//注册
 exports.register=function (req,res) {
     var name=req.body.name
     var paw=req.body.password
 
     console.log(name,paw)
-    userApi.installuse({username:name,password:paw},function (data) {
-        console.log("dasdasddsas")
-        console.log(data)
-        if(data.code==1){
-            req.session.name=name;
+    userApi.getById(name,function (data) {
+        if(data.code==0){
+            res.end(JSON.stringify(data))
+            return
         }
-        res.end(JSON.stringify(data));
+         data=data.data
+        if(data.length>0){
+            var obj={}
+            obj.code=0
+            obj.msg="账号已存在"
+            res.end(JSON.stringify(obj));
+        }else{
+            userApi.installuse({username:name,password:paw},function (data) {
+                console.log("dasdasddsas")
+                console.log(data)
+                if(data.code==1){
+                    req.session.name=name;
+                }
+                res.end(JSON.stringify(data));
+            })
+        }
+
+
+
     })
+
 }
+//提交消费信息
 exports.subSpending=function (req,res) {
     var data=req.body
     console.log(req.body)
@@ -86,6 +107,7 @@ exports.subSpending=function (req,res) {
         }
     })
 }
+//获取消费信息
 exports.getSpending=function (req,res) {
     console.log(req.body)
     userApi.selectXiaofei([req.body.date,req.session.name],function (data) {
@@ -94,6 +116,7 @@ exports.getSpending=function (req,res) {
         res.end(JSON.stringify(data));
     })
 }
+//获取消费信息总计按月
 exports.getSumByDate=function (req,res) {
     console.log(req.body)
     userApi.getSumByDate([req.body.month,req.body.nextmonth,req.session.name],function (data) {
@@ -102,6 +125,7 @@ exports.getSumByDate=function (req,res) {
         res.end(JSON.stringify(data));
     })
 }
+//修改密码
 exports.changePassword=function (req,res) {
     console.log(req.body)
     let name=req.session.name

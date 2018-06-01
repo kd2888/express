@@ -38,7 +38,14 @@
     },
     methods: {
       onSubmit() {
-
+        if(this.form.name==''){
+          this.$message.error('请输入用户名');
+          return
+        }
+        if(this.form.passsword==''){
+          this.$message.error('请输入密码');
+          return
+        }
       if(this.form.passsword!=this.form.repPasssword){
         this.$message.error("重复密码与密码不一致")
         return
@@ -60,10 +67,9 @@
                 that.$router.push("main")
               }})
 
-
           }else{
-            console.log(error)
-            that.$message.error("注册失败")
+
+            that.$message.error(data.msg)
           }
 
         }).catch(function (error) {
