@@ -50,7 +50,7 @@ module.exports = {
         });
     },
     updateXiaofei:function (dataSet,dataVal,callback) {
-        dataSet='update xiaofei set '+dataSet+' where date=?';
+        dataSet='update xiaofei set '+dataSet+' where date=? and user=?';
         pool.query(dataSet, dataVal, function (error, result) {
             if (error) {
                 callback(formats.error(error))

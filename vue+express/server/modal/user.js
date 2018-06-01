@@ -73,6 +73,7 @@ exports.subSpending=function (req,res) {
         }else {
             if(data.data.length>0){
                 dataVal.push(date)
+                dataVal.push(req.session.name)
                 userApi.updateXiaofei(dataSet,dataVal,function (data) {
                         res.end(JSON.stringify(data));
                 })
