@@ -10,8 +10,8 @@
         text-color="#fff"
         active-text-color="#ffd04b">
         <el-menu-item index="1">消费记录</el-menu-item>
-        <el-menu-item index="2" >消息中心</el-menu-item>
-        <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+        <!--<el-menu-item index="2" >消息中心</el-menu-item>-->
+        <!--<el-menu-item index="3"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>-->
         <el-submenu  index="4" style="float: right">
           <template slot="title"><span>欢迎你 {{name}}</span></template>
           <el-menu-item index="4-1" @click="loginout">退出</el-menu-item>
