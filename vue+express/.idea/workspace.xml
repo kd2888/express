@@ -18,16 +18,16 @@
         <entry file="file://$PROJECT_DIR$/client/src/assets/userapi.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="57">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userSql.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/dao/userSql.js">
+      <file leaf-file-name="conf.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/conf/conf.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="46" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="46" />
+            <state relative-caret-position="95">
+              <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -36,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/server/modal/result.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
-              <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -59,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="store.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="store.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/store/store.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="9" column="12" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="12" />
+            <state relative-caret-position="247">
+              <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -81,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/client/src/components/main.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="932">
-              <caret line="118" column="70" lean-forward="true" selection-start-line="118" selection-start-column="70" selection-end-line="118" selection-end-column="70" />
+              <caret line="118" column="70" selection-start-line="118" selection-start-column="70" selection-end-line="118" selection-end-column="70" />
               <folding>
                 <element signature="n#style#0;n#el-container#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#el-date-picker#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#el-main#0;n#el-container#0;n#template#0;n#!!top" expanded="true" />
@@ -90,13 +90,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forms.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/use/forms.vue">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/router/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="85" column="6" lean-forward="true" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
+            <state relative-caret-position="177">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
-                <element signature="n#style#0;n#el-date-picker#0;n#el-col#0;n#el-form-item#0;n#el-form#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#0#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,7 +106,7 @@
         <entry file="file://$PROJECT_DIR$/server/modal/user.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
-              <caret line="64" column="24" lean-forward="true" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+              <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -147,10 +147,8 @@
         <option value="$PROJECT_DIR$/client/src/components/use/form.vue" />
         <option value="$PROJECT_DIR$/client/src/assets/js/tool.js" />
         <option value="$PROJECT_DIR$/client/src/components/main.vue" />
-        <option value="$PROJECT_DIR$/client/src/store/store.js" />
         <option value="$PROJECT_DIR$/client/config/index.js" />
         <option value="$PROJECT_DIR$/server/routes/index.js" />
-        <option value="$PROJECT_DIR$/server/conf/conf.js" />
         <option value="$PROJECT_DIR$/client/src/assets/userapi.js" />
         <option value="$PROJECT_DIR$/server/app.js" />
         <option value="$PROJECT_DIR$/client/src/components/register.vue" />
@@ -161,6 +159,8 @@
         <option value="$PROJECT_DIR$/server/dao/userSql.js" />
         <option value="$PROJECT_DIR$/server/modal/user.js" />
         <option value="$PROJECT_DIR$/client/src/components/use/forms.vue" />
+        <option value="$PROJECT_DIR$/client/src/store/store.js" />
+        <option value="$PROJECT_DIR$/server/conf/conf.js" />
       </list>
     </option>
   </component>
@@ -387,23 +387,23 @@
       <workItem from="1527737819681" duration="9949000" />
       <workItem from="1527815552809" duration="984000" />
       <workItem from="1527817631639" duration="852000" />
-      <workItem from="1527819263035" duration="3925000" />
+      <workItem from="1527819263035" duration="4976000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65537000" />
+    <option name="totallyTimeSpent" value="66588000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18071654" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18071654" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50052685" side_tool="true" weight="0.4912854" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947312" visible="true" weight="0.40631807" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49947312" visible="true" weight="0.40631807" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32897604" />
@@ -630,13 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/conf/conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/config/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -648,16 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -702,14 +685,14 @@
     <entry file="file://$PROJECT_DIR$/client/src/assets/userapi.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/main.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="932">
-          <caret line="118" column="70" lean-forward="true" selection-start-line="118" selection-start-column="70" selection-end-line="118" selection-end-column="70" />
+          <caret line="118" column="70" selection-start-line="118" selection-start-column="70" selection-end-line="118" selection-end-column="70" />
           <folding>
             <element signature="n#style#0;n#el-container#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#el-date-picker#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#el-main#0;n#el-container#0;n#template#0;n#!!top" expanded="true" />
@@ -727,14 +710,14 @@
     <entry file="file://$PROJECT_DIR$/server/modal/result.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
-          <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/modal/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
-          <caret line="64" column="24" lean-forward="true" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -752,10 +735,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/store/store.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="12" />
+        <state relative-caret-position="247">
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/conf/conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
         </state>
       </provider>
     </entry>
