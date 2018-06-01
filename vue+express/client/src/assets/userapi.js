@@ -1,6 +1,6 @@
 import axios from 'axios'
-// let url='api'
- let url=''
+let url='api'
+//  let url=''
 
 //登陆
 const login=(name,pas)=>{
@@ -9,6 +9,10 @@ const login=(name,pas)=>{
 //注册
 const register=(name,pas)=>{
   return axios.post(`${url}/register`,{name:name,password:pas})
+}
+//修改密码
+const changePassword=(pas,newPas)=>{
+  return axios.post(`${url}/changePassword`,{password:pas,newPas:newPas})
 }
 //提交消费
 const subSpending=(data)=>{
@@ -25,6 +29,7 @@ const  getSumByDate=(month,nextmonth)=>{
 export {
   register,
   login,
+  changePassword,
   subSpending,
   getSpending,
 getSumByDate

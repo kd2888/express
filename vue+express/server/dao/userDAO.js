@@ -27,6 +27,18 @@ module.exports = {
             callback(formats.success(result));
         });
     },
+    changePassword(data,callback){
+        pool.query(userSqlMap.changePasswordById,data,function (error, result) {
+            if (error) {
+                callback(formats.error(error))
+                console.log(error)
+                return
+            }
+            ;
+            callback(formats.success(result));
+        })
+
+    },
     selectXiaofei:function (date,callback) {
         pool.query(userSqlMap.getdate, date, function (error, result) {
             if (error) {

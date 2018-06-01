@@ -54,7 +54,7 @@
           loading.close()
           data=data.data
           if(data.code==1){
-            that.$message.success({message:'注册成功',onClose:function () {
+            that.$message.success({message:'注册成功','duration':2000,onClose:function () {
                 that.$store.commit('changeName', that.form.name)
                 sessionStorage.setItem("name", that.form.name);
                 that.$router.push("main")

@@ -102,3 +102,30 @@ exports.getSumByDate=function (req,res) {
         res.end(JSON.stringify(data));
     })
 }
+exports.changePassword=function (req,res) {
+    console.log(req.body)
+    let name=req.session.name
+    let password=req.body.password;
+    let newPas=req.body.newPas;
+    userApi.getById(name,function (data) {
+
+        if(data.code==1){
+            var pawme=data.data[0].password
+            console.log(pawme)
+            console.log(password)
+            var obj={}
+            if(pawme!=password){
+                obj.code=0
+                obj.msg="原来的密码错误"
+                res.end(JSON.stringify(obj));
+            }else{
+                userApi.changePassword([newPas,name],function (data) {
+                    res.end(JSON.stringify(data));
+                })
+            }
+        }else{
+            res.end(JSON.stringify(data));
+        }
+    })
+
+}

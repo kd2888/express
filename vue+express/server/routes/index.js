@@ -13,4 +13,6 @@ router.post('/register',users.register);
 router.post('/subSpending',users.subSpending);
 router.post('/getSpending',users.getSpending);
 router.post('/getSumByDate',users.getSumByDate);
+router.post('/changePassword',users.changePassword);
+
 module.exports = router;
