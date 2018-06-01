@@ -29,7 +29,7 @@
     <el-main>
       <div class="main">
          <div class="mian-content">
-             <forms></forms>
+             <forms @goinit="init"></forms>
          </div>
         <div class="main-remind">
           <div class="remind">

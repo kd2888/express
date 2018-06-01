@@ -130,6 +130,7 @@
           data=data.data
           if(data.code==1){
             that.$message.success("提交成功")
+            that.$emit('goinit')
           }else{
             console.log(error)
             that.$message.error("提交失败")

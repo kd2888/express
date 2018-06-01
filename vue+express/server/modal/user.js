@@ -58,7 +58,8 @@ exports.subSpending=function (req,res) {
     var dataSet=''
     for (let i in data) {
         datakey += i + ','
-        dataVal.push(data[i])
+        dataVal.push(data[
+            i])
         dataSet+= i+'=?,'
     }
     console.log(datakey)
