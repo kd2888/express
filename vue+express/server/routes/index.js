@@ -8,6 +8,10 @@ router.get('/', function(req, res, next) {
  //   res.sendFile( path.join(__dirname, '../public/dist/index.html'));
     res.redirect('/index.html');
 });
+router.get('/mobile', function(req, res, next) {
+    //   res.sendFile( path.join(__dirname, '../public/dist/index.html'));
+    res.redirect('/mobile/index.html');
+});
 //登录
 router.post('/login',users.login );
 //注册
