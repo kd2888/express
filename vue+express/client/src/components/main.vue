@@ -116,7 +116,7 @@
         return this.$store.state.name
       },
       eat(){
-        return this.form.breakfast+this.form.lunch+this.form.dinner
+        return (this.form.breakfast+this.form.lunch+this.form.dinner).toFixed(2)
       },
       nextmonth(){
         let arr=this.month.split("-")
@@ -221,6 +221,9 @@
 
         })
 
+      },
+      getTwo(val){
+        return parseInt(val*100)/100.0
       }
 
     },

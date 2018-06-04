@@ -163,6 +163,18 @@
           if(data.code==1){
             if(data.data.length>0){
               that.form=data.data[0]
+            }else{
+                for(let i in that.form){
+                  console.log(i)
+                  if (!(i == "playRemind" || i == "clothesRemind" || i == "othersRemind"||i == "date"||i=='user')) {
+                    that.form[i]=0
+                  }else {
+                    if(i != "date"){
+                      that.form[i]=""
+                    }
+                  }
+
+                }
             }
           }else{
             this.$message.error('系统异常');
