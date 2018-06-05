@@ -53,10 +53,12 @@
 </template>
 
 <script>
+  import store from '@/store/store'
   import {formatDate} from '@/assets/js/tool'
   import {subSpending,getSpending} from '@/assets/userapi'
   export default {
     name: "forms",
+    store,
     data: function () {
       return {
         form: {
@@ -81,8 +83,9 @@
     mounted: function () {
       let date=new Date()
       this.now= this.form.date = formatDate(date, "yyyy-MM-dd")
-      this.init()
       this.form.user=this.$store.state.name
+      this.init()
+
     },
     computed:{
       eat(){
@@ -156,6 +159,7 @@
         this.init()
       },
       init(){
+        console.log( this.form.user)
         var that=this
         getSpending(this.form.date).then(function (data) {
           console.log(data)
@@ -169,7 +173,7 @@
                   if (!(i == "playRemind" || i == "clothesRemind" || i == "othersRemind"||i == "date"||i=='user')) {
                     that.form[i]=0
                   }else {
-                    if(i != "date"){
+                    if(i != "date"&&i != "user"){
                       that.form[i]=""
                     }
                   }
@@ -177,11 +181,11 @@
                 }
             }
           }else{
-            this.$message.error('系统异常');
+            that.$message.error('系统异常');
           }
 
         }).catch(function (error) {
-          this.$message.error('系统异常');
+          that.$message.error('系统异常');
         })
       },
       formatInput(val){

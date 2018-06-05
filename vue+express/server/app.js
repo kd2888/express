@@ -10,6 +10,8 @@ var mysql = require('mysql'),
     session = require('express-session'),
     SessionStore = require('express-mysql-session')
 var mysqlConf = require('./conf/conf')
+var history = require('connect-history-api-fallback');
+
 
 //生成一个 SessionStore 实例的参数
 var options =mysqlConf.mysql;
@@ -32,7 +34,6 @@ app.use(session({
 
 
 
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -41,21 +42,40 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// //登录拦截器
+// app.use(function (req, res, next) {
+//     // var url = req.originalUrl;
+//     var pathUrl= url.parse(req.url, true).pathname
+//     console.log({path: req.path, baseUrl: req.baseUrl, originalUrl: req.originalUrl, url: req.url,header:req.headers});
+//     console.log(req.session.name)
+//     if (req.session.name||(pathUrl.indexOf('register')!=-1)||pathUrl=='/') {
+//         console.log("keyi")
+//         next();
+//     }else{
+//         console.log("buxing")
+//         return res.redirect("/");
+//     }
+// });
+// app.use(history(
+//     {
+//         htmlAcceptHeaders: ['text/html', 'application/xhtml+xml']
+//     }
+// ))
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+
+
+
+;
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var pathUrl= url.parse(req.url, true).pathname
-    console.log(pathUrl)
-    console.log(req.session.name)
-   if(req.session.name||(pathUrl.indexOf('register')!=-1)){
+
        next(createError(404));
-   } else{
-       res.redirect('/');
-    }
 
 });
 

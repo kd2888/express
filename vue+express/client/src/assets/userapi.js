@@ -1,7 +1,9 @@
 import axios from 'axios'
 // let url='api'
  let url=''
-
+const getUser=()=>{
+  return axios.post(`${url}/getUser`,{})
+}
 //登陆
 const login=(name,pas)=>{
   return axios.post(`${url}/login`,{name:name,password:pas})
@@ -27,6 +29,7 @@ const  getSumByDate=(month,nextmonth)=>{
   return axios.post(`${url}/getSumByDate`,{month:month,nextmonth:nextmonth})
 }
 export {
+  getUser,
   register,
   login,
   changePassword,

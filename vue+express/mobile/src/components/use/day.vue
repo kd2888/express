@@ -28,7 +28,10 @@
     <x-input text-align="right" title="其他费用" type="number" v-model="form.others" @on-blur="blurInput('others')"></x-input>
     <x-textarea placeholder="其他费用备注" v-model="form.othersRemind"></x-textarea>
   </group>
+    <group >
+      <div class="zongji"> 总计：{{all}}</div>
 
+    </group>
   <x-button style="width: 80%;margin: 20px auto;display: block;" type="primary" @click.native="gosubmit">提交</x-button>
   </div>
 </template>
@@ -64,8 +67,10 @@
       mounted: function () {
         let date=new Date()
         this.now= this.form.date = formatDate(date, "yyyy-MM-dd")
-        this.init()
         this.form.user=this.$store.state.name
+        console.log( this.form.user)
+        this.init()
+
 
       },
       computed:{
@@ -73,7 +78,7 @@
           return '吃饭费用（总计：'+(parseFloat(this.form.breakfast)+parseFloat(this.form.lunch)+parseFloat(this.form.dinner))+'）'
         },
         all(){
-          return parseFloat(this.eat)+parseFloat(this.form.traffic)+parseFloat(this.form.sock)+parseFloat(this.form.clothes)+parseFloat(this.form.play)+parseFloat(this.form.others)
+          return parseFloat(this.form.breakfast)+parseFloat(this.form.lunch)+parseFloat(this.form.dinner)+parseFloat(this.form.traffic)+parseFloat(this.form.sock)+parseFloat(this.form.clothes)+parseFloat(this.form.play)+parseFloat(this.form.others)
         }
       },
       methods:{
@@ -212,5 +217,8 @@
     width: 80%;
     margin: 20px auto;
     display: block;
+  }
+  .zongji{
+   padding: 10px;
   }
 </style>

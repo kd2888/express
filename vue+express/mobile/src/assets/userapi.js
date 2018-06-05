@@ -1,6 +1,6 @@
 import axios from 'axios'
-// let url='api'
- let url='http://116.196.102.192:3000'
+let url='api'
+ // let url='http://116.196.102.192:3000'
 
 //登陆
 const login=(name,pas)=>{

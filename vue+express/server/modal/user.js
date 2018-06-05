@@ -1,5 +1,16 @@
 var userApi=require('../dao/userDAO')
-
+var formats = require('../public/javascripts/format').format
+//
+exports.getUser=function(req,res){
+    console.log("asdssdadas113123123")
+    console.log(req.session.name)
+    console.log("asdssdadas55555")
+    if(req.session.name){
+        res.end( JSON.stringify(formats.success(req.session.name)))
+    }else{
+        res.end( JSON.stringify(formats.error('没有session')))
+    }
+}
 //登陆
 exports.login=function (req,res) {
     var naame=req.body.name
