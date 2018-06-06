@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Index from '@/components/index'
 import Register from  '@/components/register'
 import Main from  '@/components/main'
+import Talk from  '@/components/talk'
 
 Vue.use(Router)
 
@@ -27,7 +28,14 @@ export default new Router({
       component: Main,
       meta: {
         requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
-      },
+      }
+    }
+    ,
+    {
+      path: '/talk',
+      name: 'talk',
+      component: Talk
+
     }
   ]
 })

@@ -1,6 +1,6 @@
 import axios from 'axios'
-// let url='api'
- let url=''
+let url='api'
+ // let url=''
 const getUser=()=>{
   return axios.post(`${url}/getUser`,{})
 }

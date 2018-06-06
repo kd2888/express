@@ -11,6 +11,9 @@ var mysql = require('mysql'),
     SessionStore = require('express-mysql-session')
 var mysqlConf = require('./conf/conf')
 var history = require('connect-history-api-fallback');
+var morgan = require('morgan');
+var fs = require('fs');
+
 
 
 //生成一个 SessionStore 实例的参数
@@ -18,8 +21,32 @@ var options =mysqlConf.mysql;
     options['resave']=false;
     options['saveUninitialized']=true;
 var app = express();
+app.all('*',function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
+    res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
 
+    if (req.method == 'OPTIONS') {
+        res.send(200); /让options请求快速返回/
+    }
+    else {
+        next();
+    }
+});
 
+app.use(morgan('combined'));
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
+
+// 自定义token
+morgan.token('from', function(req, res){
+    let date=new Date();
+    date='--------'+date;
+    return date || '-';
+});
+
+// 自定义format，其中包含自定义的token
+morgan.format('joke', '[joke] :method :url :status :res[content-length] - :response-time ms :from');
+app.use(morgan('joke', {stream: accessLogStream}));
 app.use(cookieParser());
 // 使用SessionStore 中间件
 app.use(session({
@@ -97,6 +124,12 @@ app.use(function(err, req, res, next) {
 var debug = require('debug')('my-application'); // debug模块
 app.set('port', process.env.PORT || 3000); // 设定监听端口
 
+
+// var http = require('http');
+var io= require('./socket/socket')
+
+
 var server = app.listen(app.get('port'), function() {
     debug('Express server listening on port ' + server.address().port);
 });
+io.getSocketio(server)
